@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billiard League - Klasemen & Jadwal</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --billiard-green: #0b5e2e;
+        --billiard-light: #1a8c47;
+        --billiard-dark: #062d17;
+        --gold: #ffd700;
+        --white: #ffffff;
+      }
+
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(
+          135deg,
+          var(--billiard-dark) 0%,
+          var(--billiard-green) 100%
+        );
+        color: #333;
+        min-height: 100vh;
+      }
+
+      /* Navbar */
+      .navbar {
+        background: linear-gradient(
+          90deg,
+          var(--billiard-dark) 0%,
+          var(--billiard-green) 100%
+        );
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        padding: 1rem 2rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--gold) !important;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .navbar-brand i {
+        font-size: 2rem;
+      }
+
+      .nav-link {
+        color: var(--white) !important;
+        margin: 0 0.5rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border-radius: 0.5rem;
+      }
+
+      .nav-link:hover {
+        background-color: var(--gold);
+        color: var(--billiard-dark) !important;
+      }
+
+      .nav-link.active {
+        background-color: var(--gold);
+        color: var(--billiard-dark) !important;
+      }
+
+      /* Main Container */
+      .container-main {
+        padding: 2rem 0;
+        min-height: calc(100vh - 100px);
+      }
+
+      /* Page Title */
+      .page-title {
+        color: var(--white);
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 2rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      /* Group Card */
+      .group-card {
+        background: var(--white);
+        border-radius: 1rem;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        margin-bottom: 2rem;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        border-top: 5px solid var(--gold);
+      }
+
+      .group-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+      }
+
+      .group-header {
+        background: linear-gradient(
+          90deg,
+          var(--billiard-green) 0%,
+          var(--billiard-light) 100%
+        );
+        color: var(--white);
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .group-header h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .group-header i {
+        font-size: 2rem;
+        color: var(--gold);
+      }
+
+      /* Standings Table */
+      .standings-table {
+        margin: 0;
+      }
+
+      .standings-table thead {
+        background: #f8f9fa;
+        border-bottom: 2px solid var(--billiard-green);
+      }
+
+      .standings-table thead th {
+        color: var(--billiard-dark);
+        font-weight: 700;
+        padding: 1rem;
+        text-align: center;
+        border: none;
+      }
+
+      .standings-table tbody tr {
+        border-bottom: 1px solid #e9ecef;
+        transition: background-color 0.3s ease;
+      }
+
+      .standings-table tbody tr:hover {
+        background-color: #f8f9fa;
+      }
+
+      .standings-table tbody tr:nth-child(1) {
+        background-color: rgba(255, 215, 0, 0.05);
+      }
+
+      .standings-table tbody tr:nth-child(2) {
+        background-color: rgba(192, 192, 192, 0.05);
+      }
+
+      .standings-table tbody tr:nth-child(3) {
+        background-color: rgba(205, 127, 50, 0.05);
+      }
+
+      .standings-table tbody td {
+        padding: 1rem;
+        vertical-align: middle;
+        text-align: center;
+      }
+
+      .player-name {
+        text-align: left;
+        font-weight: 600;
+        color: var(--billiard-dark);
+      }
+
+      .rank-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--white);
+      }
+
+      .rank-1 {
+        background: linear-gradient(135deg, #ffd700, #ffa500);
+        box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+      }
+
+      .rank-2 {
+        background: linear-gradient(135deg, #c0c0c0, #a9a9a9);
+        box-shadow: 0 4px 10px rgba(192, 192, 192, 0.4);
+      }
+
+      .rank-3 {
+        background: linear-gradient(135deg, #cd7f32, #b87333);
+        box-shadow: 0 4px 10px rgba(205, 127, 50, 0.4);
+      }
+
+      .rank-other {
+        background: var(--billiard-green);
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.9rem;
+      }
+
+      .stat-box {
+        display: inline-block;
+        background: var(--billiard-green);
+        color: var(--white);
+        padding: 0.4rem 0.8rem;
+        border-radius: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin: 0 0.2rem;
+      }
+
+      /* Schedule Section */
+      .schedule-container {
+        background: var(--white);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .match-card {
+        background: linear-gradient(135deg, #f8f9fa 0%, var(--white) 100%);
+        border-left: 4px solid var(--billiard-green);
+        border-radius: 0.8rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .match-card:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transform: translateX(5px);
+      }
+
+      .match-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .match-date {
+        background: var(--billiard-green);
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .match-status {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--billiard-dark);
+        padding: 0.3rem 0.8rem;
+        border-radius: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .match-players {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      /* Result Card */
+      .result-card {
+        background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+        border-left: 4px solid var(--gold);
+        border-radius: 0.8rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .result-card:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transform: translateX(5px);
+      }
+
+      .result-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .result-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--gold), #ffa500);
+        color: var(--billiard-dark);
+        padding: 0.4rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+
+      .result-players {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .result-player {
+        flex: 1;
+        text-align: center;
+      }
+
+      .result-player.winner {
+        background: linear-gradient(135deg, var(--gold), #ffa500);
+        color: var(--white);
+        padding: 1rem;
+        border-radius: 0.6rem;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .result-player.loser {
+        color: #999;
+        font-size: 1rem;
+      }
+
+      .winner-badge {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--billiard-dark);
+        padding: 0.2rem 0.6rem;
+        border-radius: 0.3rem;
+        font-size: 0.7rem;
+        font-weight: 700;
+        margin-top: 0.5rem;
+      }
+
+      /* Date Separator */
+      .date-separator {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem 0 1.5rem 0;
+        padding: 1rem 0;
+      }
+
+      .date-separator::before,
+      .date-separator::after {
+        content: "";
+        flex: 1;
+        height: 2px;
+        background: linear-gradient(90deg, var(--billiard-green), transparent);
+      }
+
+      .date-separator::after {
+        background: linear-gradient(90deg, transparent, var(--billiard-green));
+      }
+
+      .date-separator-text {
+        background: linear-gradient(
+          135deg,
+          var(--billiard-green) 0%,
+          var(--billiard-light) 100%
+        );
+        color: var(--white);
+        padding: 0.7rem 1.5rem;
+        border-radius: 2rem;
+        font-weight: 700;
+        font-size: 1rem;
+        white-space: nowrap;
+        box-shadow: 0 4px 10px rgba(11, 94, 46, 0.3);
+      }
+
+      /* Time Session Separator */
+      .time-separator {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 1.5rem 0 1rem 0;
+        padding: 0.8rem 0;
+      }
+
+      .time-separator::before,
+      .time-separator::after {
+        content: "";
+        flex: 1;
+        height: 1.5px;
+        background: linear-gradient(90deg, #ffc107, transparent);
+      }
+
+      .time-separator::after {
+        background: linear-gradient(90deg, transparent, #ffc107);
+      }
+
+      .time-separator-text {
+        background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+        color: var(--billiard-dark);
+        padding: 0.6rem 1.3rem;
+        border-radius: 1.5rem;
+        font-weight: 700;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        box-shadow: 0 3px 10px rgba(255, 193, 7, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .time-separator-text i {
+        font-size: 1.1rem;
+      }
+
+      .player-name-match {
+        flex: 1;
+        text-align: center;
+        font-weight: 600;
+        color: var(--billiard-dark);
+        font-size: 1.1rem;
+      }
+
+      .vs-badge {
+        background: var(--billiard-green);
+        color: var(--white);
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      /* Filter Buttons */
+      .filter-btn {
+        background: var(--white);
+        color: var(--billiard-green);
+        border: 2px solid var(--billiard-green);
+        font-weight: 600;
+        padding: 0.6rem 1.2rem;
+        border-radius: 0.5rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--billiard-green);
+        color: var(--white);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--billiard-dark);
+        color: var(--white);
+        text-align: center;
+        padding: 2rem;
+        margin-top: 3rem;
+        border-top: 3px solid var(--gold);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .page-title {
+          font-size: 1.8rem;
+        }
+
+        .group-header h3 {
+          font-size: 1.2rem;
+        }
+
+        .standings-table thead th,
+        .standings-table tbody td {
+          padding: 0.7rem 0.5rem;
+          font-size: 0.9rem;
+        }
+
+        .rank-badge {
+          width: 2rem;
+          height: 2rem;
+          font-size: 0.8rem;
+        }
+
+        .match-players {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .vs-badge {
+          width: 2rem;
+          height: 2rem;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-lg">
+        <a class="navbar-brand" href="#klasemen">
+          <i class="fas fa-circle"></i>
+          BILLIARD LEAGUE
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" onclick="showSection('klasemen')">
+                <i class="fas fa-trophy"></i> Klasemen
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="showSection('jadwal')">
+                <i class="fas fa-calendar"></i> Jadwal
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-lg container-main">
+      <!-- SECTION: KLASEMEN -->
+      <div id="klasemen-section">
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="page-title">
+              <i class="fas fa-trophy"></i>
+              Klasemen Liga Billiard
+            </div>
+          </div>
+        </div>
+
+        <div id="standings-container"></div>
+      </div>
+
+      <!-- SECTION: JADWAL -->
+      <div id="jadwal-section" style="display: none">
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="page-title">
+              <i class="fas fa-calendar-days"></i>
+              Jadwal Pertandingan
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="schedule-container">
+              <div class="mb-3">
+                <button
+                  class="filter-btn active"
+                  onclick="filterSchedule('semua')"
+                >
+                  Semua
+                </button>
+                <button
+                  class="filter-btn"
+                  onclick="filterSchedule('mendatang')"
+                >
+                  Mendatang
+                </button>
+                <button
+                  class="filter-btn"
+                  onclick="filterSchedule('berlangsung')"
+                >
+                  Berlangsung
+                </button>
+                <button class="filter-btn" onclick="filterSchedule('selesai')">
+                  Selesai
+                </button>
+              </div>
+              <div id="schedule-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <i class="fas fa-circle"></i> Billiard League 2024 |
+      <i class="fas fa-circle"></i> All Rights Reserved
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Data Files -->
+    <script src="standings.js"></script>
+    <script src="schedule.js"></script>
+    <script src="done_matches.js"></script>
+
+    <script>
+      // Calculate Points dari Done Matches
+      function calculatePoints() {
+        // Buat object untuk menyimpan perhitungan point
+        const playerStats = {};
+
+        // Initialize semua player dari standingsData
+        standingsData.forEach((group) => {
+          group.players.forEach((player) => {
+            playerStats[player.name] = {
+              wins: 0,
+              losses: 0,
+              points: 0
+            };
+          });
+        });
+
+        // Hitung points dari doneMatches
+        doneMatches.forEach((match) => {
+          const { player_1, player_2, winner } = match;
+
+          // Initialize player jika belum ada di object
+          if (!playerStats[player_1]) {
+            playerStats[player_1] = { wins: 0, losses: 0, points: 0 };
+          }
+          if (!playerStats[player_2]) {
+            playerStats[player_2] = { wins: 0, losses: 0, points: 0 };
+          }
+
+          // Tentukan pemenang dan yang kalah
+          if (winner === player_1) {
+            playerStats[player_1].wins++;
+            playerStats[player_1].points += 1; // Menang: +1
+            playerStats[player_2].losses++;
+            playerStats[player_2].points += 0; // Kalah: +0
+          } else if (winner === player_2) {
+            playerStats[player_2].wins++;
+            playerStats[player_2].points += 1; // Menang: +1
+            playerStats[player_1].losses++;
+            playerStats[player_1].points += 0; // Kalah: +0
+          }
+        });
+
+        // Update standingsData dengan calculated points
+        standingsData.forEach((group) => {
+          group.players.forEach((player) => {
+            if (playerStats[player.name]) {
+              player.wins = playerStats[player.name].wins;
+              player.losses = playerStats[player.name].losses;
+              player.points = playerStats[player.name].points;
+            }
+          });
+
+          // Sort pemain berdasarkan poin (tertinggi ke terendah)
+          group.players.sort((a, b) => b.points - a.points);
+        });
+      }
+
+      // Render Klasemen
+      function renderStandings() {
+        const container = document.getElementById("standings-container");
+        let html = "";
+
+        standingsData.forEach((group) => {
+          html += `
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="group-card">
+                                <div class="group-header">
+                                    <i class="fas fa-users"></i>
+                                    <h3>${group.group}</h3>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table standings-table">
+                                        <thead>
+                                            <tr>
+                                                <th width="5%">#</th>
+                                                <th width="45%">Pemain</th>
+                                                <th width="15%">Menang</th>
+                                                <th width="15%">Kalah</th>
+                                                <th width="20%">Poin</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                `;
+
+          group.players.forEach((player, index) => {
+            const rankClass = `rank-${index + 1 <= 3 ? index + 1 : "other"}`;
+            html += `
+                        <tr>
+                            <td>
+                                <span class="rank-badge ${rankClass}">${index + 1}</span>
+                            </td>
+                            <td class="player-name">${player.name}</td>
+                            <td><span class="stat-box">${player.wins}</span></td>
+                            <td><span class="stat-box">${player.losses}</span></td>
+                            <td><strong>${player.points}</strong></td>
+                        </tr>
+                    `;
+          });
+
+          html += `
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        });
+
+        container.innerHTML = html;
+      }
+
+      // Get Match Status
+      function getMatchStatus(dateStr) {
+        const matchDate = new Date(dateStr);
+        const now = new Date();
+
+        if (matchDate > now) {
+          return { status: "Mendatang", class: "mendatang" };
+        } else if (matchDate.getTime() - now.getTime() > -3600000) {
+          // within 1 hour
+          return { status: "Berlangsung", class: "berlangsung" };
+        } else {
+          return { status: "Selesai", class: "selesai" };
+        }
+      }
+
+      // Format Date
+      function formatDate(dateStr) {
+        const date = new Date(dateStr);
+        const options = {
+          weekday: "short",
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit"
+        };
+        return date.toLocaleDateString("id-ID", options);
+      }
+
+      // Get Time Session (siang/sore)
+      function getTimeSession(dateStr) {
+        const time = dateStr.split(" ")[1];
+        const hour = parseInt(time.split(":")[0]);
+
+        if (hour < 17) {
+          return { session: "Siang", icon: "fas fa-sun", class: "siang" };
+        } else {
+          return { session: "Sore", icon: "fas fa-moon", class: "sore" };
+        }
+      }
+
+      // Render Jadwal
+      function renderSchedule(filter = "semua") {
+        const container = document.getElementById("schedule-container");
+        let html = "";
+
+        // If filter is "selesai", show done matches instead
+        if (filter === "selesai") {
+          if (doneMatches.length === 0) {
+            html =
+              '<div class="alert alert-info">Tidak ada pertandingan yang selesai.</div>';
+          } else {
+            let currentDate = null;
+            let currentSession = null;
+
+            doneMatches.forEach((match) => {
+              // Extract date part (YYYY-MM-DD)
+              const matchDatePart = match.date.split(" ")[0];
+              const { session } = getTimeSession(match.date);
+
+              // Add date separator if date changes
+              if (currentDate !== matchDatePart) {
+                currentDate = matchDatePart;
+                currentSession = null; // Reset session when date changes
+
+                const dateObj = new Date(matchDatePart);
+                const dayName = dateObj.toLocaleDateString("id-ID", {
+                  weekday: "long"
+                });
+                const formattedDate = dateObj.toLocaleDateString("id-ID", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric"
+                });
+
+                html += `
+                          <div class="date-separator">
+                            <div class="date-separator-text">
+                              <i class="fas fa-calendar-alt"></i> ${dayName}, ${formattedDate}
+                            </div>
+                          </div>
+                      `;
+              }
+
+              // Add time session separator if session changes
+              if (currentSession !== session) {
+                currentSession = session;
+                const { icon } = getTimeSession(match.date);
+
+                html += `
+                          <div class="time-separator">
+                            <div class="time-separator-text">
+                              <i class="${icon}"></i> Sesi ${session}
+                            </div>
+                          </div>
+                      `;
+              }
+
+              html += `
+                          <div class="result-card">
+                            <div class="result-header">
+                              <div class="match-date">
+                                <i class="fas fa-check-circle"></i> ${formatDate(match.date)}
+                              </div>
+                              <span class="result-badge">Selesai</span>
+                            </div>
+                            <div class="result-players">
+                              <div class="result-player ${
+                                match.winner === match.player_1
+                                  ? "winner"
+                                  : "loser"
+                              }">
+                                <div>${match.player_1}</div>
+                                ${
+                                  match.winner === match.player_1
+                                    ? '<div class="winner-badge"><i class="fas fa-crown"></i> Pemenang</div>'
+                                    : ""
+                                }
+                              </div>
+                              <div style="font-weight: 600; color: #666;">VS</div>
+                              <div class="result-player ${
+                                match.winner === match.player_2
+                                  ? "winner"
+                                  : "loser"
+                              }">
+                                <div>${match.player_2}</div>
+                                ${
+                                  match.winner === match.player_2
+                                    ? '<div class="winner-badge"><i class="fas fa-crown"></i> Pemenang</div>'
+                                    : ""
+                                }
+                              </div>
+                            </div>
+                          </div>
+                      `;
+            });
+          }
+        } else {
+          // Show schedule for other filters
+          const filtered = scheduleData.filter((match) => {
+            if (filter === "semua") return true;
+            const status = getMatchStatus(match.date);
+            return status.class === filter;
+          });
+
+          if (filtered.length === 0) {
+            html =
+              '<div class="alert alert-info">Tidak ada pertandingan untuk filter ini.</div>';
+          } else {
+            let currentDate = null;
+            let currentSession = null;
+
+            filtered.forEach((match) => {
+              // Extract date part (YYYY-MM-DD)
+              const matchDatePart = match.date.split(" ")[0];
+              const { session } = getTimeSession(match.date);
+
+              // Add date separator if date changes
+              if (currentDate !== matchDatePart) {
+                currentDate = matchDatePart;
+                currentSession = null; // Reset session when date changes
+
+                const dateObj = new Date(matchDatePart);
+                const dayName = dateObj.toLocaleDateString("id-ID", {
+                  weekday: "long"
+                });
+                const formattedDate = dateObj.toLocaleDateString("id-ID", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric"
+                });
+
+                html += `
+                          <div class="date-separator">
+                            <div class="date-separator-text">
+                              <i class="fas fa-calendar-alt"></i> ${dayName}, ${formattedDate}
+                            </div>
+                          </div>
+                      `;
+              }
+
+              // Add time session separator if session changes
+              if (currentSession !== session) {
+                currentSession = session;
+                const { icon } = getTimeSession(match.date);
+
+                html += `
+                          <div class="time-separator">
+                            <div class="time-separator-text">
+                              <i class="${icon}"></i> Sesi ${session}
+                            </div>
+                          </div>
+                      `;
+              }
+
+              const { status } = getMatchStatus(match.date);
+              html += `
+                          <div class="match-card">
+                            <div class="match-header">
+                              <div class="match-date">
+                                <i class="fas fa-clock"></i> ${formatDate(match.date)}
+                              </div>
+                              <span class="match-status">${status}</span>
+                            </div>
+                            <div class="match-players">
+                              <div class="player-name-match">${match.player_1}</div>
+                              <div class="vs-badge">VS</div>
+                              <div class="player-name-match">${match.player_2}</div>
+                            </div>
+                          </div>
+                      `;
+            });
+          }
+        }
+
+        container.innerHTML = html;
+      }
+
+      // Filter Schedule
+      function filterSchedule(filter) {
+        // Update button active state
+        document
+          .querySelectorAll(".filter-btn")
+          .forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        renderSchedule(filter);
+      }
+
+      // Show Section
+      function showSection(section) {
+        // Hide all sections
+        document.getElementById("klasemen-section").style.display = "none";
+        document.getElementById("jadwal-section").style.display = "none";
+
+        // Show selected section
+        document.getElementById(section + "-section").style.display = "block";
+
+        // Update navbar active state
+        document
+          .querySelectorAll(".nav-link")
+          .forEach((link) => link.classList.remove("active"));
+        event.target.closest(".nav-link").classList.add("active");
+
+        // Scroll to top
+        window.scrollTo(0, 0);
+      }
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", function () {
+        calculatePoints();
+        renderStandings();
+        renderSchedule();
+      });
+    </script>
+  </body>
+</html>
