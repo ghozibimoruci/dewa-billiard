@@ -2,27 +2,7 @@
 const scheduleData = [
   {
     player_1: "Enrico Raynaldo",
-    player_2: "Martian Logi Otama",
-    date: "2026-05-12 12:00"
-  },
-  {
-    player_1: "Martian Logi Otama",
-    player_2: "Asnan Asrawi",
-    date: "2026-05-12 12:00"
-  },
-  {
-    player_1: "Gestyar Satrio Adji",
-    player_2: "Ryan Jonathan",
-    date: "2026-05-12 12:00"
-  },
-  {
-    player_1: "Enrico Raynaldo",
     player_2: "Zakaria",
-    date: "2026-05-12 17:30"
-  },
-  {
-    player_1: "Enrico Raynaldo",
-    player_2: "Asnan Asrawi",
     date: "2026-05-12 17:30"
   },
   {
