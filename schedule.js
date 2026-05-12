@@ -36,6 +36,11 @@ const scheduleData = [
     date: "2026-05-13 12:00"
   },
   {
+    player_1: "Ryan Jonathan",
+    player_2: "Yustinus",
+    date: "2026-05-13 12:00"
+  },
+  {
     player_1: "Arif Setiadi",
     player_2: "AW",
     date: "2026-05-15 12:00"
@@ -63,11 +68,6 @@ const scheduleData = [
   {
     player_1: "Zakaria",
     player_2: "Martian Logi Otama",
-    date: "2026-05-19 12:00"
-  },
-  {
-    player_1: "Ryan Jonathan",
-    player_2: "Yustinus",
     date: "2026-05-19 12:00"
   },
   {
