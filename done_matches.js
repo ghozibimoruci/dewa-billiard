@@ -58,6 +58,6 @@ const doneMatches = [
     player_1: "Enrico Raynaldo",
     player_2: "Asnan Asrawi",
     winner: "Enrico Raynaldo",
-    date: "2026-05-12 17:30"
+    date: "2026-05-12 12:00"
   }
 ];
