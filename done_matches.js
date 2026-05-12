@@ -17,5 +17,23 @@ const doneMatches = [
     player_2: "Gestyar Satrio Adji",
     winner: "Gestyar Satrio Adji",
     date: "2026-05-11 12:00"
+  },
+  {
+    player_1: "Resti",
+    player_2: "Suyudi",
+    winner: "Resti",
+    date: "2026-05-11 17:30"
+  },
+  {
+    player_1: "Resti",
+    player_2: "Vinanda Kristianti",
+    winner: "Resti",
+    date: "2026-05-11 17:30"
+  },
+  {
+    player_1: "King Ali",
+    player_2: "Suyudi",
+    winner: "Suyudi",
+    date: "2026-05-11 17:30"
   }
 ];
