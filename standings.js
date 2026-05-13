@@ -21,7 +21,7 @@ const standingsData = [
       { name: "Zakaria", wins: 0, losses: 0, points: 0 },
       { name: "Rifki Dwi Setyanto", wins: 0, losses: 0, points: 0 },
       { name: "Enrico Raynaldo", wins: 0, losses: 0, points: 0 },
-      { name: "	Rheza Rivaldi", wins: 0, losses: 0, points: 0 }
+      { name: "Rheza Rivaldi", wins: 0, losses: 0, points: 0 }
     ]
   },
   {
