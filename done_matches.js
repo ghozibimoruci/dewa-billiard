@@ -58,6 +58,54 @@ const doneMatches = [
     player_1: "Enrico Raynaldo",
     player_2: "Asnan Asrawi",
     winner: "Enrico Raynaldo",
-    date: "2026-05-12 12:00"
+    date: "2026-05-12 17:30"
+  },
+  {
+    player_1: "King Ali",
+    player_2: "Lukas Sinambela",
+    winner: "Lukas Sinambela",
+    date: "2026-05-12 17:30"
+  },
+  {
+    player_1: "Enrico Raynaldo",
+    player_2: "Zakaria",
+    winner: "Enrico Raynaldo",
+    date: "2026-05-12 17:30"
+  },
+  {
+    player_1: "King Ali",
+    player_2: "Rabbani Ridho Ihsani",
+    winner: "King Ali",
+    date: "2026-05-12 17:30"
+  },
+  {
+    player_1: "King Ali",
+    player_2: "Vinanda Kristianti",
+    winner: "Vinanda Kristianti",
+    date: "2026-05-12 17:30"
+  },
+  {
+    player_1: "Zakaria",
+    player_2: "Asnan Asrawi",
+    winner: "Asnan Asrawi",
+    date: "2026-05-12 17:30"
+  },
+  {
+    player_1: "Arif Setiadi",
+    player_2: "Karno",
+    winner: "Arif Setiadi",
+    date: "2026-05-12 17:30"
+  },
+  {
+    player_1: "Rheza Rivaldi",
+    player_2: "Martian Logi Otama",
+    winner: "Martian Logi Otama",
+    date: "2026-05-12 17:30"
+  },
+  {
+    player_1: "Rheza Rivaldi",
+    player_2: "Asnan Asrawi",
+    winner: "Rheza Rivaldi",
+    date: "2026-05-12 17:30"
   }
 ];
