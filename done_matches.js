@@ -155,5 +155,29 @@ const doneMatches = [
     player_2: "Enrico Raynaldo",
     winner: "Enrico Raynaldo",
     date: "2026-05-13 17:30"
+  },
+  {
+    player_1: "Arif Setiadi",
+    player_2: "AW",
+    winner: "Arif Setiadi",
+    date: "2026-05-15 12:00"
+  },
+  {
+    player_1: "Arif Setiadi",
+    player_2: "Ghozi Bimo Ruci",
+    winner: "Arif Setiadi",
+    date: "2026-05-15 12:00"
+  },
+  {
+    player_1: "Ghozi Bimo Ruci",
+    player_2: "AW",
+    winner: "Ghozi Bimo Ruci",
+    date: "2026-05-15 12:00"
+  },
+  {
+    player_1: "Karno",
+    player_2: "AW",
+    winner: "Karno",
+    date: "2026-05-15 12:00"
   }
 ];
