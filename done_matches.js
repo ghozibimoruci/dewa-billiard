@@ -107,5 +107,53 @@ const doneMatches = [
     player_2: "Asnan Asrawi",
     winner: "Rheza Rivaldi",
     date: "2026-05-12 17:30"
+  },
+  {
+    player_1: "Ryan Jonathan",
+    player_2: "Yustinus",
+    winner: "Ryan Jonathan",
+    date: "2026-05-13 12:00"
+  },
+  {
+    player_1: "Wildan Viado Elvana Putra",
+    player_2: "Karno",
+    winner: "Wildan Viado Elvana Putra",
+    date: "2026-05-13 12:00"
+  },
+  {
+    player_1: "M. Aqsa Munzir Muflihan",
+    player_2: "Gestyar Satrio Adji",
+    winner: "M. Aqsa Munzir Muflihan",
+    date: "2026-05-13 12:00"
+  },
+  {
+    player_1: "Rheza Rivaldi",
+    player_2: "Zakaria",
+    winner: "Zakaria",
+    date: "2026-05-13 12:00"
+  },
+  {
+    player_1: "Enrico Raynaldo",
+    player_2: "Rifki Dwi Setyanto",
+    winner: "Enrico Raynaldo",
+    date: "2026-05-13 12:00"
+  },
+  {
+    player_1: "Rheza Rivaldi",
+    player_2: "Rifki Dwi Setyanto",
+    winner: "Rifki Dwi Setyanto",
+    date: "2026-05-13 12:00"
+  },
+  {
+    player_1: "Ryan Jonathan",
+    player_2: "M. Aqsa Munzir Muflihan",
+    winner: "Ryan Jonathan",
+    date: "2026-05-13 12:00"
+  },
+  {
+    player_1: "Rheza Rivaldi",
+    player_2: "Enrico Raynaldo",
+    winner: "Enrico Raynaldo",
+    date: "2026-05-13 17:30"
   }
 ];

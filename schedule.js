@@ -3,31 +3,6 @@
 // Data Jadwal Turnamen
 const scheduleData = [
   {
-    player_1: "M. Aqsa Munzir Muflihan",
-    player_2: "Gestyar Satrio Adji",
-    date: "2026-05-13 12:00"
-  },
-  {
-    player_1: "Rheza Rivaldi",
-    player_2: "Zakaria",
-    date: "2026-05-13 12:00"
-  },
-  {
-    player_1: "Wildan Viado Elvana Putra",
-    player_2: "Karno",
-    date: "2026-05-13 12:00"
-  },
-  {
-    player_1: "Ryan Jonathan",
-    player_2: "Yustinus",
-    date: "2026-05-13 12:00"
-  },
-  {
-    player_1: "Rheza Rivaldi",
-    player_2: "Enrico Raynaldo",
-    date: "2026-05-13 17:30"
-  },
-  {
     player_1: "Arif Setiadi",
     player_2: "AW",
     date: "2026-05-15 12:00"
@@ -108,11 +83,6 @@ const scheduleData = [
     date: "2026-05-25 12:00"
   },
   {
-    player_1: "M. Aqsa Munzir Muflihan",
-    player_2: "Ryan Jonathan",
-    date: "2026-05-25 12:00"
-  },
-  {
     player_1: "Fathur Rahman",
     player_2: "Gestyar Satrio Adji",
     date: "2026-05-26 12:00"
@@ -131,11 +101,6 @@ const scheduleData = [
     player_1: "Fathur Rahman",
     player_2: "Ryan Jonathan",
     date: "2026-06-02 12:00"
-  },
-  {
-    player_1: "Enrico Raynaldo",
-    player_2: "Rifki Dwi Setyanto",
-    date: "2026-06-03 12:00"
   },
   {
     player_1: "Fathur Rahman",
@@ -185,11 +150,6 @@ const scheduleData = [
   {
     player_1: "Resti",
     player_2: "Lukas Sinambela",
-    date: "2026-06-10 12:00"
-  },
-  {
-    player_1: "Rheza Rivaldi",
-    player_2: "Rifki Dwi Setyanto",
     date: "2026-06-10 12:00"
   },
   {
