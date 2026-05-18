@@ -179,5 +179,23 @@ const doneMatches = [
     player_2: "AW",
     winner: "Karno",
     date: "2026-05-15 12:00"
+  },
+  {
+    player_1: "Rifki Dwi Setyanto",
+    player_2: "Asnan Asrawi",
+    winner: "Asnan Asrawi",
+    date: "2026-05-18 12:00"
+  },
+  {
+    player_1: "Wildan Viado Elvana Putra",
+    player_2: "AW",
+    winner: "AW",
+    date: "2026-05-18 12:00"
+  },
+  {
+    player_1: "Ghozi Bimo Ruci",
+    player_2: "Karno",
+    winner: "Ghozi Bimo Ruci",
+    date: "2026-05-18 17:30"
   }
 ];

@@ -3,16 +3,6 @@
 // Data Jadwal Turnamen
 const scheduleData = [
   {
-    player_1: "Suyudi",
-    player_2: "Vinanda Kristianti",
-    date: "2026-05-18 12:00"
-  },
-  {
-    player_1: "Suyudi",
-    player_2: "Rabbani Ridho Ihsani",
-    date: "2026-05-18 17:30"
-  },
-  {
     player_1: "Zakaria",
     player_2: "Martian Logi Otama",
     date: "2026-05-19 12:00"
@@ -23,19 +13,29 @@ const scheduleData = [
     date: "2026-05-19 12:00"
   },
   {
+    player_1: "Wildan Viado Elvana Putra",
+    player_2: "Sigit Suparno Putra",
+    date: "2026-05-19 12:00"
+  },
+  {
+    player_1: "Suyudi",
+    player_2: "Vinanda Kristianti",
+    date: "2026-05-19 17:30"
+  },
+  {
+    player_1: "Suyudi",
+    player_2: "Rabbani Ridho Ihsani",
+    date: "2026-05-19 17:30"
+  },
+  {
     player_1: "Lukas Sinambela",
     player_2: "Rabbani Ridho Ihsani",
     date: "2026-05-20 12:00"
   },
   {
-    player_1: "Rifki Dwi Setyanto",
-    player_2: "Asnan Asrawi",
+    player_1: "Arif Setiadi",
+    player_2: "Wildan Viado Elvana Putra",
     date: "2026-05-20 12:00"
-  },
-  {
-    player_1: "Wildan Viado Elvana Putra",
-    player_2: "AW",
-    date: "2026-05-21 12:00"
   },
   {
     player_1: "Lukas Sinambela",
@@ -50,11 +50,6 @@ const scheduleData = [
   {
     player_1: "M. Aqsa Munzir Muflihan",
     player_2: "Yustinus",
-    date: "2026-05-22 12:00"
-  },
-  {
-    player_1: "Wildan Viado Elvana Putra",
-    player_2: "Sigit Suparno Putra",
     date: "2026-05-22 12:00"
   },
   {
@@ -93,11 +88,6 @@ const scheduleData = [
     date: "2026-06-03 12:00"
   },
   {
-    player_1: "Arif Setiadi",
-    player_2: "Wildan Viado Elvana Putra",
-    date: "2026-06-04 12:00"
-  },
-  {
     player_1: "Resti",
     player_2: "Rabbani Ridho Ihsani",
     date: "2026-06-04 12:00"
@@ -121,11 +111,6 @@ const scheduleData = [
     player_1: "Juwandy Susilo",
     player_2: "Ryan Jonathan",
     date: "2026-06-09 12:00"
-  },
-  {
-    player_1: "Ghozi Bimo Ruci",
-    player_2: "Karno",
-    date: "2026-06-10 12:00"
   },
   {
     player_1: "Resti",
