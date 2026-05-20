@@ -197,5 +197,54 @@ const doneMatches = [
     player_2: "Karno",
     winner: "Ghozi Bimo Ruci",
     date: "2026-05-18 17:30"
+  },
+  {
+    player_1: "Zakaria",
+    player_2: "Martian Logi Otama",
+    winner: "Zakaria",
+    date: "2026-05-19 12:00"
+  },
+  {
+    player_1: "Wildan Viado Elvana Putra",
+    player_2: "Sigit Suparno Putra",
+    winner: "Wildan Viado Elvana Putra",
+    date: "2026-05-19 12:00"
+  },
+  {
+    player_1: "Karno",
+    player_2: "Sigit Suparno Putra",
+    winner: "Sigit Suparno Putra",
+    date: "2026-05-19 12:00"
+  },
+  {
+    player_1: "Ghozi Bimo Ruci",
+    player_2: "Sigit Suparno Putra",
+    winner: "Sigit Suparno Putra",
+    date: "2026-05-19 12:00"
+  },
+
+  {
+    player_1: "Suyudi",
+    player_2: "Vinanda Kristianti",
+    winner: "Vinanda Kristianti",
+    date: "2026-05-19 17:30"
+  },
+  {
+    player_1: "Suyudi",
+    player_2: "Rabbani Ridho Ihsani",
+    winner: "Rabbani Ridho Ihsani",
+    date: "2026-05-19 17:30"
+  },
+  {
+    player_1: "Fathur Rahman",
+    player_2: "Gestyar Satrio Adji",
+    winner: "Gestyar Satrio Adji",
+    date: "2026-05-20 12:00"
+  },
+  {
+    player_1: "Arif Setiadi",
+    player_2: "Wildan Viado Elvana Putra",
+    winner: "Arif Setiadi",
+    date: "2026-05-20 12:00"
   }
 ];

@@ -3,39 +3,9 @@
 // Data Jadwal Turnamen
 const scheduleData = [
   {
-    player_1: "Zakaria",
-    player_2: "Martian Logi Otama",
-    date: "2026-05-19 12:00"
-  },
-  {
-    player_1: "Karno",
-    player_2: "Sigit Suparno Putra",
-    date: "2026-05-19 12:00"
-  },
-  {
-    player_1: "Wildan Viado Elvana Putra",
-    player_2: "Sigit Suparno Putra",
-    date: "2026-05-19 12:00"
-  },
-  {
-    player_1: "Suyudi",
-    player_2: "Vinanda Kristianti",
-    date: "2026-05-19 17:30"
-  },
-  {
-    player_1: "Suyudi",
-    player_2: "Rabbani Ridho Ihsani",
-    date: "2026-05-19 17:30"
-  },
-  {
     player_1: "Lukas Sinambela",
     player_2: "Rabbani Ridho Ihsani",
-    date: "2026-05-20 12:00"
-  },
-  {
-    player_1: "Arif Setiadi",
-    player_2: "Wildan Viado Elvana Putra",
-    date: "2026-05-20 12:00"
+    date: "2026-05-21 12:00"
   },
   {
     player_1: "Lukas Sinambela",
@@ -61,11 +31,6 @@ const scheduleData = [
     player_1: "Rifki Dwi Setyanto",
     player_2: "Zakaria",
     date: "2026-05-25 12:00"
-  },
-  {
-    player_1: "Fathur Rahman",
-    player_2: "Gestyar Satrio Adji",
-    date: "2026-05-26 12:00"
   },
   {
     player_1: "Fathur Rahman",
@@ -100,11 +65,6 @@ const scheduleData = [
   {
     player_1: "Juwandy Susilo",
     player_2: "Yustinus",
-    date: "2026-06-08 12:00"
-  },
-  {
-    player_1: "Ghozi Bimo Ruci",
-    player_2: "Sigit Suparno Putra",
     date: "2026-06-08 12:00"
   },
   {
