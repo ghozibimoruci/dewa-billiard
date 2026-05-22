@@ -256,7 +256,7 @@ const doneMatches = [
   {
     player_1: "Lukas Sinambela",
     player_2: "Rabbani Ridho Ihsani",
-    winner: "Ihsan",
+    winner: "Rabbani Ridho Ihsani",
     date: "2026-05-21 12:00"
   },
   {
