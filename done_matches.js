@@ -246,5 +246,35 @@ const doneMatches = [
     player_2: "Wildan Viado Elvana Putra",
     winner: "Arif Setiadi",
     date: "2026-05-20 12:00"
+  },
+  {
+    player_1: "Ghozi Bimo Ruci",
+    player_2: "Wildan Viado Elvana Putra",
+    winner: "Wildan Viado Elvana Putra",
+    date: "2026-05-20 17:30"
+  },
+  {
+    player_1: "Lukas Sinambela",
+    player_2: "Rabbani Ridho Ihsani",
+    winner: "Ihsan",
+    date: "2026-05-21 12:00"
+  },
+  {
+    player_1: "Lukas Sinambela",
+    player_2: "Vinanda Kristianti",
+    winner: "Vinanda Kristianti",
+    date: "2026-05-21 12:00"
+  },
+  {
+    player_1: "Rifki Dwi Setyanto",
+    player_2: "Martian Logi Otama",
+    winner: "Rifki Dwi Setyanto",
+    date: "2026-05-21 17:30"
+  },
+  {
+    player_1: "Arif Setiadi",
+    player_2: "Sigit Suparno Putra",
+    winner: "Arif Setiadi",
+    date: "2026-05-22 12:00"
   }
 ];
