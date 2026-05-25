@@ -276,5 +276,47 @@ const doneMatches = [
     player_2: "Sigit Suparno Putra",
     winner: "Arif Setiadi",
     date: "2026-05-22 12:00"
+  },
+  {
+    player_1: "Juwandy Susilo",
+    player_2: "Fathur Rahman",
+    winner: "Juwandy Susilo",
+    date: "2026-05-22 17:30"
+  },
+  {
+    player_1: "Juwandy Susilo",
+    player_2: "Gestyar Satrio Adji",
+    winner: "Gestyar Satrio Adji",
+    date: "2026-05-22 17:30"
+  },
+  {
+    player_1: "Fathur Rahman",
+    player_2: "M. Aqsa Munzir Muflihan",
+    winner: "M. Aqsa Munzir Muflihan",
+    date: "2026-05-22 17:30"
+  },
+  {
+    player_1: "Juwandy Susilo",
+    player_2: "M. Aqsa Munzir Muflihan",
+    winner: "Juwandy Susilo",
+    date: "2026-05-22 17:30"
+  },
+  {
+    player_1: "Fathur Rahman",
+    player_2: "Ryan Jonathan",
+    winner: "Ryan Jonathan",
+    date: "2026-05-22 17:30"
+  },
+  {
+    player_1: "Juwandy Susilo",
+    player_2: "Ryan Jonathan",
+    winner: "Juwandy Susilo",
+    date: "2026-05-22 17:30"
+  },
+  {
+    player_1: "Rifki Dwi Setyanto",
+    player_2: "Zakaria",
+    winner: "Zakaria",
+    date: "2026-05-25 12:00"
   }
 ];
