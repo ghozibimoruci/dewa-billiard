@@ -553,17 +553,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link px-3 active" onclick="showSection('klasemen')">
+              <a
+                class="nav-link px-3 active"
+                href="#klasemen"
+                onclick="showSection('klasemen')"
+              >
                 <i class="fas fa-trophy"></i> Klasemen
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-3" onclick="showSection('jadwal')">
+              <a
+                class="nav-link px-3"
+                href="#jadwal"
+                onclick="showSection('jadwal')"
+              >
                 <i class="fas fa-calendar"></i> Jadwal
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-3" href="knockout">
+              <a class="nav-link px-3" href="knockout/index.html">
                 <i class="fas fa-bolt"></i> Knock Out
               </a>
             </li>
@@ -1005,12 +1013,25 @@
         window.scrollTo(0, 0);
       }
 
+      // Handle hash-based routing
+      function handleHash() {
+        const hash = window.location.hash.replace("#", "");
+        if (hash === "jadwal") {
+          showSection("jadwal");
+        } else {
+          showSection("klasemen");
+        }
+      }
+
       // Initialize
       document.addEventListener("DOMContentLoaded", function () {
         calculatePoints();
         renderStandings();
         renderSchedule();
+        handleHash();
       });
+
+      window.addEventListener("hashchange", handleHash);
     </script>
   </body>
 </html>
