@@ -6,7 +6,7 @@ const knockoutMatches = [
     seed_1: "Juara Group A",
     player_2: "Wildan Viado Elvana Putra",
     seed_2: "Runner-up Group D",
-    date: "2026-06-16 12:00",
+    date: "2026-06-17 12:00",
     winner: null
   },
   {
@@ -15,7 +15,7 @@ const knockoutMatches = [
     seed_1: "Juara Group C",
     player_2: "Asnan Asrawi",
     seed_2: "Runner-up Group B",
-    date: "2026-06-17 12:00",
+    date: "2026-06-18 12:00",
     winner: null
   },
   {
@@ -24,7 +24,7 @@ const knockoutMatches = [
     seed_1: "Juara Group B",
     player_2: "Juwandy Susilo",
     seed_2: "Runner-up Group C",
-    date: "2026-06-18 12:00",
+    date: "2026-06-24 12:00",
     winner: null
   },
   {
@@ -33,7 +33,7 @@ const knockoutMatches = [
     seed_1: "Juara Group D",
     player_2: "Resti",
     seed_2: "Runner-up Group A",
-    date: "2026-06-19 12:00",
+    date: "2026-06-25 12:00",
     winner: null
   }
 ];
